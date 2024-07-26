@@ -13,7 +13,7 @@ fun AirlineTicket.transferTicket(
   otherFirstName: String,
   otherLastName: String
 ): AirlineTicket {
-  TODO()
+  return copy(firstName = otherFirstName, lastName = otherLastName)
 }
 
 fun main() {
