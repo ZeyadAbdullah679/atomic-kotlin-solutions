@@ -1,32 +1,36 @@
 // Enumerations/Task1.kt
 package enumerationsExercise1
+
 import enumerationsExercise1.Direction.*
 
 enum class Direction {
-  UP, DOWN, LEFT, RIGHT
+    UP, DOWN, LEFT, RIGHT
 }
 
 class Robot {
-  var x = 0
-  var y = 0
+    var x = 0
+    var y = 0
 
-  fun go(direction: Direction, steps: Int) {
-    when (direction) {
-      /* TODO */
+    fun go(direction: Direction, steps: Int) {
+        when (direction) {
+            UP -> y -= steps
+            DOWN -> y += steps
+            RIGHT -> x += steps
+            LEFT -> x -= steps
+        }
     }
-  }
 
-  val location: String
-    get() = "($x, $y)"
+    val location: String
+        get() = "($x, $y)"
 }
 
 fun main() {
-  val robot = Robot()
-  println(robot.location)
-  robot.go(RIGHT, 1)
-  println(robot.location)
-  robot.go(DOWN, 2)
-  println(robot.location)
+    val robot = Robot()
+    println(robot.location)
+    robot.go(RIGHT, 1)
+    println(robot.location)
+    robot.go(DOWN, 2)
+    println(robot.location)
 }
 /* Output:
 (0, 0)
