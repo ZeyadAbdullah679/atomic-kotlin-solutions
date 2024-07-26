@@ -3,19 +3,19 @@ package safecalls
 import atomictest.eq
 
 class Person(
-  val name: String,
-  var friend: Person? = null
+    val name: String,
+    var friend: Person? = null
 )
 
 fun main() {
-  val alice = Person("Alice")
-  alice.friend?.friend?.name eq null   // [1]
+    val alice = Person("Alice")
+    alice.friend?.friend?.name eq null   // [1]
 
-  val bob = Person("Bob")
-  val charlie = Person("Charlie", bob)
-  bob.friend = charlie
-  bob.friend?.friend?.name eq "Bob"    // [2]
+    val bob = Person("Bob")
+    val charlie = Person("Charlie", bob)
+    bob.friend = charlie
+    bob.friend?.friend?.name eq "Bob"    // [2]
 
-  (alice.friend?.friend?.name
-    ?: "Unknown") eq "Unknown"         // [3]
+    (alice.friend?.friend?.name
+        ?: "Unknown") eq "Unknown"         // [3]
 }
