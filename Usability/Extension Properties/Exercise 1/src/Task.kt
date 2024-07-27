@@ -3,10 +3,10 @@ package extensionPropertiesExercise1
 import atomictest.eq
 
 val <T> List<T>.secondOrNull: T?
-  get() = TODO()
+  get() = if(this.size<2) null else this[1]
 
 val <T> List<T>.penultimateOrNull: T?
-  get() = TODO()
+  get() = if(this.size<2) null else this[this.size-2]
 
 fun main() {
   val ints = listOf(1, 2, 3)
