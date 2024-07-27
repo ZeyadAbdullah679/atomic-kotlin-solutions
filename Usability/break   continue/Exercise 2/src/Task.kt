@@ -4,7 +4,7 @@ package breakAndContinueExercise2
 fun analyzeStrings1(strings: List<List<String>>) {
   outer@ for (list in strings) {
     inner@ for (string in list) {
-      if (string == "stop") break// add label
+      if (string == "stop") break@inner
       println(string)
     }
   }
@@ -13,7 +13,7 @@ fun analyzeStrings1(strings: List<List<String>>) {
 fun analyzeStrings2(strings: List<List<String>>) {
   outer@ for (list in strings) {
     inner@ for (string in list) {
-      if (string == "stop") continue// add label
+      if (string == "stop") continue@outer
       println(string)
     }
   }
