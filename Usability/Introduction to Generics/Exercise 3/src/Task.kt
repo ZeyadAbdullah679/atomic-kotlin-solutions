@@ -2,7 +2,14 @@
 package introductionToGenericsExercise3
 import atomictest.eq
 
-class CountingSet
+class CountingSet<T> {
+    private val map = mutableMapOf<T, Int>()
+    fun add(element: T) {
+        map[element] = map.getOrDefault(element, 0) + 1
+    }
+    fun count(element: T) = map.getOrDefault(element, 0)
+    fun toSet() = map.keys
+}
 
 fun main() {
 /*
