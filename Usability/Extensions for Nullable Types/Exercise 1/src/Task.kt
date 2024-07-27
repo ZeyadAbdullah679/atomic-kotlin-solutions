@@ -2,7 +2,7 @@
 package extensionsForNullableTypesExercise1
 import atomictest.eq
 
-fun String?.orEmpty(): String = TODO()
+fun String?.orEmpty(): String = this ?: ""
 
 fun main() {
 
