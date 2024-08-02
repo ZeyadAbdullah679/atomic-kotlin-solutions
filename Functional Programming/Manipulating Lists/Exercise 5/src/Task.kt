@@ -1,9 +1,10 @@
 // ManipulatingLists/Task5.kt
 package manipulatingListsExercise5
 import atomictest.eq
+import higherOrderFunctionsExercise1.map
 
 fun <T, R> List<T>.flatMap(f: (T) -> List<R>): List<R> =
-  TODO("???.flatten()")
+  map(f).flatten()
 
 fun main() {
   val list = listOf(3, 1, 4)

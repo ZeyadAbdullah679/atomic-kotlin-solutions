@@ -12,8 +12,7 @@ val Int.isEven: Boolean
 private fun getNonTrivialDivisors(num: Int): List<Int> =
     (2..sqrt(num.toDouble()).toInt())
         .filter { num % it == 0 }
-        .map { listOf(it, num / it) }
-        .flatten()
+        .flatMap { listOf(it, num / it) }
         .distinct()
 
 fun Int.isPrime(): Boolean = getNonTrivialDivisors(this).isEmpty() && this != 1
