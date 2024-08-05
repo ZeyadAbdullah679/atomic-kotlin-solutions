@@ -2,5 +2,6 @@
 package sequencesExercise5
 
 fun School.instructorsWithLargestClass(): Set<Instructor> {
-  TODO()
+    return lessons.groupBy { it.students.size }
+        .maxByOrNull { it.key }!!.value.mapTo(mutableSetOf()) { it.instructor }
 }

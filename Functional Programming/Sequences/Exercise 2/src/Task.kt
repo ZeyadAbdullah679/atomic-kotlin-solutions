@@ -2,13 +2,13 @@
 package sequencesExercise2
 
 fun School.studentInstructors(
-  student: Student
+    student: Student
 ): Set<Instructor> {
-  TODO()
+    return lessons.filter { student in it.students }.mapTo(mutableSetOf()) { it.instructor }
 }
 
 fun School.studentsOf(
-  instructor: Instructor
+    instructor: Instructor
 ): Set<Student> {
-  TODO()
+    return lessons.filter { it.instructor == instructor }.flatMapTo(mutableSetOf()) { it.students }
 }
