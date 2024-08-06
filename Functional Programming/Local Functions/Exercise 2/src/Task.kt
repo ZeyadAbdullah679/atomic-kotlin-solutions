@@ -1,15 +1,21 @@
 // LocalFunctions/Task2.kt
 package localFunctionsExercise2
+
 import atomictest.eq
 
 fun createCounter(): Pair<() -> Unit, () -> Int> {
-  TODO()
+    var counter = 0
+    fun inc() {
+        counter++
+    }
+    fun value() = counter
+    return Pair(::inc, ::value)
 }
 
 fun main() {
-  val (inc, value) = createCounter()
-  repeat(10) {
-    inc()
-  }
-  value() eq 10
+    val (inc, value) = createCounter()
+    repeat(10) {
+        inc()
+    }
+    value() eq 10
 }
