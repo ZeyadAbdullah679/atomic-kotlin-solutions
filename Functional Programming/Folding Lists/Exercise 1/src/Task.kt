@@ -1,11 +1,12 @@
 // FoldingLists/Task1.kt
 package foldingListsExercise1
+
 import atomictest.eq
 
 fun <T> List<T>.size(): Int =
-  TODO("fold(0) { ??? }")
+    fold(0) { acc, _ -> acc + 1 }
 
 fun main() {
-  val list = listOf(1, 2, 3)
-  list.size() eq 3
+    val list = listOf(1, 2, 3)
+    list.size() eq 3
 }
