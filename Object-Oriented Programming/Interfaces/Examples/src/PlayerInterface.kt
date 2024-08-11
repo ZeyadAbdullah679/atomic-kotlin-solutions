@@ -3,21 +3,21 @@ package interfaces
 import atomictest.eq
 
 interface Player {
-  val symbol: Char
+    val symbol: Char
 }
 
 class Food : Player {
-  override val symbol = '.'
+    override val symbol = '.'
 }
 
 class Robot : Player {
-  override val symbol get() = 'R'
+    override val symbol get() = 'R'
 }
 
 class Wall(override val symbol: Char) : Player
 
 fun main() {
-  listOf(Food(), Robot(), Wall('|')).map {
-    it.symbol
-  } eq "[., R, |]"
+    listOf(Food(), Robot(), Wall('|')).map {
+        it.symbol
+    } eq "[., R, |]"
 }

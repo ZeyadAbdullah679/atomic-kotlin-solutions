@@ -1,23 +1,28 @@
 // Interfaces/Task3.kt
 package interfacesExercise3
+
 import atomictest.eq
 
 interface Pet {
-  // TODO
+    val sound: String
 }
 
-class Dog: Pet {
-  // TODO
+class Dog() : Pet {
+    override val sound: String
+        get() = "Bark!"
 }
 
-class Cat: Pet {
-  // TODO
+class Cat() : Pet {
+    override val sound: String
+        get() = "Meow!"
 }
 
-class Hamster: Pet {
-  // TODO
+class Hamster() : Pet {
+    override val sound: String
+        get() = "Squeak!"
+
 }
 
 fun main() {
-  // TODO
+    println(listOf(Dog(), Cat(), Hamster()).map { it.sound })
 }
