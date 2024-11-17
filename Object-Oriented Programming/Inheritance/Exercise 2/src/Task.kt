@@ -3,7 +3,9 @@ package inheritanceExercise2
 import inheritanceExercise1.Detergent
 import atomictest.eq
 
-class Disinfectant
+class Disinfectant: Detergent(){
+    fun sterilize() = ops.add("sterilize")
+}
 
 fun main() {
 /*

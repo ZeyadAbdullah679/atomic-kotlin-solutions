@@ -7,6 +7,7 @@ fun Int.isOdd(): Boolean = this % 2 != 0
 
 fun Int.isEven(): Boolean = this % 2 == 0
 
+
 fun main() {
     1.isOdd() eq true
     2.isEven() eq true

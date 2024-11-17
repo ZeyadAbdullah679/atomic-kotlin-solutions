@@ -4,7 +4,7 @@ import atomictest.eq
 
 data class Simple(
     val arg1: String,
-    var arg2: Int
+    var arg2: Int,
 )
 
 fun main() {
